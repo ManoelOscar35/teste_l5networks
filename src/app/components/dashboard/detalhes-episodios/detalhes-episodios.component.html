@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="row">
+    <div class="col-md-3 col-sm-12">
+        <app-sidebar>
+            <router-outlet></router-outlet>
+        </app-sidebar>
+    </div>
+    <div class="col-md-9 col-sm-12">
+        <h2>Detalhes do Episódio</h2>
+        <div class="container">
+           <div class="card" style="width: 18rem;">
+                <h5 class="p-1">{{episodio?.episode}}</h5>
+                <p>{{episodio?.name}}</p>
+                <p>{{episodio?.created}}</p>
+                <div *ngFor="let c of episodio?.characters">
+                    <p>{{c}}</p>
+                </div>
+                <p>{{episodio?.air_date}}</p>
+                <p>{{episodio?.url}}</p>
+            </div>
+        </div>
+    </div>
+</div>

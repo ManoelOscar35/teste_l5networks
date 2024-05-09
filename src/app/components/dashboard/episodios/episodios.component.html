@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="row">
+    <div class="col-md-3 col-sm-12">
+        <app-sidebar>
+            <router-outlet></router-outlet>
+        </app-sidebar>
+    </div>
+    <div class="col-md-9 col-sm-12">
+        <div class="display-flex">
+            <h2>Episódios</h2>
+            <form class="d-flex" role="search">
+                <input class="form-control  me-2" #termoDaBusca type="search" placeholder="Buscar" aria-label="Search" (keyup)="buscarMethod(termoDaBusca.value);">
+            </form>
+        </div>
+        <div class="container">
+           <div class="card" style="width: 18rem;" *ngFor="let e of episodiosArray">
+                <h5 class="p-1" style="cursor: pointer;" (click)="episodio(e.episode);" routerLink="/dashboard/detalhes-episodios">{{e.episode}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
